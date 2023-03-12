@@ -1,0 +1,8 @@
+/* Enter your custom styles here */
+.cReqLbl > .sapTntInfoLabelInner {
+  font-size: 1rem !important;
+}
+
+.cReqLbl {
+  height: 1.2rem !important;
+}

@@ -1,0 +1,29 @@
+{
+  "Reqid": "C20230001",
+  "items": [
+    {
+      "Linbr": 1,
+      "Ctnam": "Printer Consumables",
+      "Ctype": "Cartridge",
+      "Mknam": "Brother",
+      "Mdnam": "TN-2365",
+      "Qty": 1
+    },
+    {
+      "Linbr": 2,
+      "Ctnam": "Printer Consumables",
+      "Ctype": "Drum",
+      "Mknam": "Brother",
+      "Mdnam": "DR-2365",
+      "Qty": 3
+    },
+    {
+      "Linbr": 3,
+      "Ctnam": "Printer Consumables",
+      "Ctype": "Cartridge",
+      "Mknam": "Samsung",
+      "Mdnam": "BT-115L",
+      "Qty": 1
+    }
+  ]
+}

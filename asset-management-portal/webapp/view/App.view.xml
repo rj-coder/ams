@@ -1,0 +1,164 @@
+<mvc:View
+    xmlns:cssgrid="sap.ui.layout.cssgrid"
+    xmlns:table="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:tnt="sap.tnt"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:ui="sap.ui.table"
+    xmlns:u="sap.ui.unified"
+    controllerName="in.westerncoal.assetmanagementportal.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="_IDGenShell1">
+        <app>
+            <App id="app">
+                <pages>
+                    <Page id="page">
+                        <customHeader>
+                            <f:ShellBar id="_IDGenShellBar1" homeIcon="https://www.coalindia.in/static/images/favicon.png" title="AMS">
+                                <f:additionalContent />
+                                <f:menu>
+                                    <Menu id="_IDGenMenu1">
+                                        <MenuItem id="_IDGenMenuItem1" text="Requisition">
+                                            <MenuItem text="Create Requisition" icon="sap-icon://create" />
+                                            <MenuItem text="View Requisitions" icon="sap-icon://list" />
+                                        </MenuItem>
+                                        <MenuItem id="_IDGenMenuItem2" text="Stock" />
+                                        <MenuItem id="_IDGenMenuItem3" text="Maintenance" />
+                                    </Menu>
+                                </f:menu>
+                                <f:profile />
+                                <f:searchManager />
+                            </f:ShellBar>
+                        </customHeader>
+                        <content>
+                            <Panel id="_IDGenPanel1" class="sapUiLargeMarginTop">
+                                <content>
+                                    <ui:Table
+                                        id="_IDGenTable1"
+                                        selectionMode="None"
+                                        rowActionCount="1"
+                                        rows="{
+                                         model: 'Reqs',
+                                         path: '/items',
+                                         parameters: {
+                                          operationMode: 'Client'  
+                                         }
+                                         
+
+ 
+                                        }"
+                                    >
+                                        <ui:extension>
+                                            <OverflowToolbar id="_IDGenOverflowToolbar1" design="Transparent">
+                                                <content>
+                                                    <Title level="H2" text="Create Requisition" />
+                                                    <ToolbarSpacer />
+                                                    <Button id="_IDGenOverflowToolbarButton1" icon="sap-icon://add" text="Create Line Item" />
+                                                </content>
+                                                <layoutData />
+                                            </OverflowToolbar>
+                                            <layout:VerticalLayout width="100%">
+                                                <layout:content>
+                                                    <HBox class="sapUiTinyMarginTopBottom">
+                                                        <Image width="4rem" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Coal_India_Logo.svg/1200px-Coal_India_Logo.svg.png" />
+
+                                                        <VBox width="100%" alignItems="Center">
+                                                            <Title text="Western Coalfields Ltd" titleStyle="H2" />
+                                                            <Title text="System Department" titleStyle="H4" />
+                                                            <Title text="Wani North Area" titleStyle="H5" />
+                                                        </VBox>
+                                                    </HBox>
+                                                    <tnt:InfoLabel  class="cReqLbl" colorScheme="3" text="{Reqs>/Reqid}" >
+                                                        
+                                                        
+                                                </tnt:InfoLabel>
+                                                </layout:content>
+                                                <layout:layoutData />
+                                            </layout:VerticalLayout>
+                                        </ui:extension>
+                                        <ui:columns>
+                                            <table:Column width="4rem" hAlign="Center">
+                                                <table:label>
+                                                    <Label text="Line No." wrapping="true" />
+                                                </table:label>
+
+                                                <table:template>
+                                                    <Text text="{Reqs>Linbr}" />
+                                                </table:template>
+                                            </table:Column>
+                                            <table:Column width="15rem" hAlign="Center">
+                                                <table:label>
+                                                    <Label text="Category" />
+                                                </table:label>
+                                                <table:menu />
+                                                <table:multiLabels />
+                                                <table:template>
+                                                    <Text text="{Reqs>Ctnam}" />
+                                                </table:template>
+                                            </table:Column>
+                                            <table:Column width="12rem" hAlign="Center">
+                                                <table:label>
+                                                    <Label text="Type" />
+                                                </table:label>
+                                                <table:menu />
+                                                <table:template>
+                                                    <Text text="{Reqs>Ctype}" />
+                                                </table:template>
+                                            </table:Column>
+                                            <table:Column width="12rem" hAlign="Center">
+                                                <table:label>
+                                                    <Label text="Make" />
+                                                </table:label>
+                                                <table:menu />
+                                                <table:multiLabels />
+                                                <table:template>
+                                                    <Text text="{Reqs>Mknam}" />
+                                                </table:template>
+                                            </table:Column>
+                                            <table:Column width="15rem" hAlign="Center">
+                                                <table:label>
+                                                    <Label text="Model" />
+                                                </table:label>
+                                                <table:menu />
+                                                <table:multiLabels />
+                                                <table:template>
+                                                    <Text text="{Reqs>Mdnam}" />
+                                                </table:template>
+                                            </table:Column>
+
+                                            <table:Column width="5rem" hAlign="Center">
+                                                <table:label>
+                                                    <Label text="Qty" />
+                                                </table:label>
+                                                <table:menu />
+                                                <table:multiLabels />
+                                                <table:template>
+                                                    <Text text="{Reqs>Qty}" />
+                                                </table:template>
+                                            </table:Column>
+                                        </ui:columns>
+
+                                        <ui:rowActionTemplate>
+                                            <table:RowAction>
+                                                <table:items>
+                                                    <table:RowActionItem icon="sap-icon://edit" text="Edit" type="Custom" visible="true" />
+                                                    <table:RowActionItem icon="sap-icon://delete" text="Delete" type="Delete" visible="true" />
+                                                    <table:RowActionItem icon="sap-icon://detail-view" text="Detail" type="Navigation" visible="true" />
+                                                </table:items>
+                                            </table:RowAction>
+                                        </ui:rowActionTemplate>
+                                    </ui:Table>
+                                </content>
+                            </Panel>
+                        </content>
+                    </Page>
+                </pages>
+            </App>
+        </app>
+    </Shell>
+</mvc:View>
